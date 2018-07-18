@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1275317520FEC61F00A13F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275317420FEC61F00A13F67 /* AppDelegate.swift */; };
+		1275317720FEC61F00A13F67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275317620FEC61F00A13F67 /* ViewController.swift */; };
+		1275317A20FEC61F00A13F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1275317820FEC61F00A13F67 /* Main.storyboard */; };
+		1275317D20FEC61F00A13F67 /* FlightTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1275317B20FEC61F00A13F67 /* FlightTracker.xcdatamodeld */; };
+		1275317F20FEC62000A13F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1275317E20FEC62000A13F67 /* Assets.xcassets */; };
+		1275318220FEC62000A13F67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1275318020FEC62000A13F67 /* LaunchScreen.storyboard */; };
+		1275318D20FEC62000A13F67 /* FlightTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275318C20FEC62000A13F67 /* FlightTrackerTests.swift */; };
+		1275319820FEC62000A13F67 /* FlightTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275319720FEC62000A13F67 /* FlightTrackerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1275318920FEC62000A13F67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1275316920FEC61F00A13F67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1275317020FEC61F00A13F67;
+			remoteInfo = FlightTracker;
+		};
+		1275319420FEC62000A13F67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1275316920FEC61F00A13F67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1275317020FEC61F00A13F67;
+			remoteInfo = FlightTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1275317120FEC61F00A13F67 /* FlightTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1275317420FEC61F00A13F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1275317620FEC61F00A13F67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1275317920FEC61F00A13F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1275317C20FEC61F00A13F67 /* FlightTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlightTracker.xcdatamodel; sourceTree = "<group>"; };
+		1275317E20FEC62000A13F67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1275318120FEC62000A13F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1275318320FEC62000A13F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1275318820FEC62000A13F67 /* FlightTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1275318C20FEC62000A13F67 /* FlightTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTrackerTests.swift; sourceTree = "<group>"; };
+		1275318E20FEC62000A13F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1275319320FEC62000A13F67 /* FlightTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1275319720FEC62000A13F67 /* FlightTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTrackerUITests.swift; sourceTree = "<group>"; };
+		1275319920FEC62000A13F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1275316E20FEC61F00A13F67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1275318520FEC62000A13F67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1275319020FEC62000A13F67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1275316820FEC61F00A13F67 = {
+			isa = PBXGroup;
+			children = (
+				1275317320FEC61F00A13F67 /* FlightTracker */,
+				1275318B20FEC62000A13F67 /* FlightTrackerTests */,
+				1275319620FEC62000A13F67 /* FlightTrackerUITests */,
+				1275317220FEC61F00A13F67 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1275317220FEC61F00A13F67 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1275317120FEC61F00A13F67 /* FlightTracker.app */,
+				1275318820FEC62000A13F67 /* FlightTrackerTests.xctest */,
+				1275319320FEC62000A13F67 /* FlightTrackerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1275317320FEC61F00A13F67 /* FlightTracker */ = {
+			isa = PBXGroup;
+			children = (
+				1275317420FEC61F00A13F67 /* AppDelegate.swift */,
+				1275317620FEC61F00A13F67 /* ViewController.swift */,
+				1275317820FEC61F00A13F67 /* Main.storyboard */,
+				1275317E20FEC62000A13F67 /* Assets.xcassets */,
+				1275318020FEC62000A13F67 /* LaunchScreen.storyboard */,
+				1275318320FEC62000A13F67 /* Info.plist */,
+				1275317B20FEC61F00A13F67 /* FlightTracker.xcdatamodeld */,
+			);
+			path = FlightTracker;
+			sourceTree = "<group>";
+		};
+		1275318B20FEC62000A13F67 /* FlightTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				1275318C20FEC62000A13F67 /* FlightTrackerTests.swift */,
+				1275318E20FEC62000A13F67 /* Info.plist */,
+			);
+			path = FlightTrackerTests;
+			sourceTree = "<group>";
+		};
+		1275319620FEC62000A13F67 /* FlightTrackerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1275319720FEC62000A13F67 /* FlightTrackerUITests.swift */,
+				1275319920FEC62000A13F67 /* Info.plist */,
+			);
+			path = FlightTrackerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1275317020FEC61F00A13F67 /* FlightTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1275319C20FEC62000A13F67 /* Build configuration list for PBXNativeTarget "FlightTracker" */;
+			buildPhases = (
+				1275316D20FEC61F00A13F67 /* Sources */,
+				1275316E20FEC61F00A13F67 /* Frameworks */,
+				1275316F20FEC61F00A13F67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlightTracker;
+			productName = FlightTracker;
+			productReference = 1275317120FEC61F00A13F67 /* FlightTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1275318720FEC62000A13F67 /* FlightTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1275319F20FEC62000A13F67 /* Build configuration list for PBXNativeTarget "FlightTrackerTests" */;
+			buildPhases = (
+				1275318420FEC62000A13F67 /* Sources */,
+				1275318520FEC62000A13F67 /* Frameworks */,
+				1275318620FEC62000A13F67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1275318A20FEC62000A13F67 /* PBXTargetDependency */,
+			);
+			name = FlightTrackerTests;
+			productName = FlightTrackerTests;
+			productReference = 1275318820FEC62000A13F67 /* FlightTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1275319220FEC62000A13F67 /* FlightTrackerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 127531A220FEC62000A13F67 /* Build configuration list for PBXNativeTarget "FlightTrackerUITests" */;
+			buildPhases = (
+				1275318F20FEC62000A13F67 /* Sources */,
+				1275319020FEC62000A13F67 /* Frameworks */,
+				1275319120FEC62000A13F67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1275319520FEC62000A13F67 /* PBXTargetDependency */,
+			);
+			name = FlightTrackerUITests;
+			productName = FlightTrackerUITests;
+			productReference = 1275319320FEC62000A13F67 /* FlightTrackerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1275316920FEC61F00A13F67 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Michael Zhou";
+				TargetAttributes = {
+					1275317020FEC61F00A13F67 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					1275318720FEC62000A13F67 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 1275317020FEC61F00A13F67;
+					};
+					1275319220FEC62000A13F67 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 1275317020FEC61F00A13F67;
+					};
+				};
+			};
+			buildConfigurationList = 1275316C20FEC61F00A13F67 /* Build configuration list for PBXProject "FlightTracker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1275316820FEC61F00A13F67;
+			productRefGroup = 1275317220FEC61F00A13F67 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1275317020FEC61F00A13F67 /* FlightTracker */,
+				1275318720FEC62000A13F67 /* FlightTrackerTests */,
+				1275319220FEC62000A13F67 /* FlightTrackerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1275316F20FEC61F00A13F67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1275318220FEC62000A13F67 /* LaunchScreen.storyboard in Resources */,
+				1275317F20FEC62000A13F67 /* Assets.xcassets in Resources */,
+				1275317A20FEC61F00A13F67 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1275318620FEC62000A13F67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1275319120FEC62000A13F67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1275316D20FEC61F00A13F67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1275317D20FEC61F00A13F67 /* FlightTracker.xcdatamodeld in Sources */,
+				1275317720FEC61F00A13F67 /* ViewController.swift in Sources */,
+				1275317520FEC61F00A13F67 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1275318420FEC62000A13F67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1275318D20FEC62000A13F67 /* FlightTrackerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1275318F20FEC62000A13F67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1275319820FEC62000A13F67 /* FlightTrackerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1275318A20FEC62000A13F67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1275317020FEC61F00A13F67 /* FlightTracker */;
+			targetProxy = 1275318920FEC62000A13F67 /* PBXContainerItemProxy */;
+		};
+		1275319520FEC62000A13F67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1275317020FEC61F00A13F67 /* FlightTracker */;
+			targetProxy = 1275319420FEC62000A13F67 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1275317820FEC61F00A13F67 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1275317920FEC61F00A13F67 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1275318020FEC62000A13F67 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1275318120FEC62000A13F67 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1275319A20FEC62000A13F67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1275319B20FEC62000A13F67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1275319D20FEC62000A13F67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlightTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mzhou.FlightTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1275319E20FEC62000A13F67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlightTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mzhou.FlightTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		127531A020FEC62000A13F67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlightTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mzhou.FlightTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlightTracker.app/FlightTracker";
+			};
+			name = Debug;
+		};
+		127531A120FEC62000A13F67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlightTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mzhou.FlightTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlightTracker.app/FlightTracker";
+			};
+			name = Release;
+		};
+		127531A320FEC62000A13F67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlightTrackerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mzhou.FlightTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlightTracker;
+			};
+			name = Debug;
+		};
+		127531A420FEC62000A13F67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlightTrackerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mzhou.FlightTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlightTracker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1275316C20FEC61F00A13F67 /* Build configuration list for PBXProject "FlightTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1275319A20FEC62000A13F67 /* Debug */,
+				1275319B20FEC62000A13F67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1275319C20FEC62000A13F67 /* Build configuration list for PBXNativeTarget "FlightTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1275319D20FEC62000A13F67 /* Debug */,
+				1275319E20FEC62000A13F67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1275319F20FEC62000A13F67 /* Build configuration list for PBXNativeTarget "FlightTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				127531A020FEC62000A13F67 /* Debug */,
+				127531A120FEC62000A13F67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		127531A220FEC62000A13F67 /* Build configuration list for PBXNativeTarget "FlightTrackerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				127531A320FEC62000A13F67 /* Debug */,
+				127531A420FEC62000A13F67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1275317B20FEC61F00A13F67 /* FlightTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1275317C20FEC61F00A13F67 /* FlightTracker.xcdatamodel */,
+			);
+			currentVersion = 1275317C20FEC61F00A13F67 /* FlightTracker.xcdatamodel */;
+			path = FlightTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1275316920FEC61F00A13F67 /* Project object */;
+}
