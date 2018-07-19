@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1275317520FEC61F00A13F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275317420FEC61F00A13F67 /* AppDelegate.swift */; };
-		1275317720FEC61F00A13F67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275317620FEC61F00A13F67 /* ViewController.swift */; };
+		1275317720FEC61F00A13F67 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275317620FEC61F00A13F67 /* MapViewController.swift */; };
 		1275317A20FEC61F00A13F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1275317820FEC61F00A13F67 /* Main.storyboard */; };
 		1275317D20FEC61F00A13F67 /* FlightTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1275317B20FEC61F00A13F67 /* FlightTracker.xcdatamodeld */; };
 		1275317F20FEC62000A13F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1275317E20FEC62000A13F67 /* Assets.xcassets */; };
 		1275318220FEC62000A13F67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1275318020FEC62000A13F67 /* LaunchScreen.storyboard */; };
 		1275318D20FEC62000A13F67 /* FlightTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275318C20FEC62000A13F67 /* FlightTrackerTests.swift */; };
 		1275319820FEC62000A13F67 /* FlightTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275319720FEC62000A13F67 /* FlightTrackerUITests.swift */; };
+		127531A620FEC6A800A13F67 /* FlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127531A520FEC6A800A13F67 /* FlightsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 /* Begin PBXFileReference section */
 		1275317120FEC61F00A13F67 /* FlightTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1275317420FEC61F00A13F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1275317620FEC61F00A13F67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1275317620FEC61F00A13F67 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1275317920FEC61F00A13F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1275317C20FEC61F00A13F67 /* FlightTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlightTracker.xcdatamodel; sourceTree = "<group>"; };
 		1275317E20FEC62000A13F67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		1275319320FEC62000A13F67 /* FlightTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1275319720FEC62000A13F67 /* FlightTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTrackerUITests.swift; sourceTree = "<group>"; };
 		1275319920FEC62000A13F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		127531A520FEC6A800A13F67 /* FlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				1275317420FEC61F00A13F67 /* AppDelegate.swift */,
-				1275317620FEC61F00A13F67 /* ViewController.swift */,
+				1275317620FEC61F00A13F67 /* MapViewController.swift */,
+				127531A520FEC6A800A13F67 /* FlightsViewController.swift */,
 				1275317820FEC61F00A13F67 /* Main.storyboard */,
 				1275317E20FEC62000A13F67 /* Assets.xcassets */,
 				1275318020FEC62000A13F67 /* LaunchScreen.storyboard */,
@@ -260,7 +263,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1275317D20FEC61F00A13F67 /* FlightTracker.xcdatamodeld in Sources */,
-				1275317720FEC61F00A13F67 /* ViewController.swift in Sources */,
+				1275317720FEC61F00A13F67 /* MapViewController.swift in Sources */,
+				127531A620FEC6A800A13F67 /* FlightsViewController.swift in Sources */,
 				1275317520FEC61F00A13F67 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
