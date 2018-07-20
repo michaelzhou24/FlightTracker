@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Flights-->
         <scene sceneID="pPu-hA-efQ">
             <objects>
                 <viewController id="lxQ-Ya-6eY" customClass="FlightsViewController" customModule="FlightTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="38F-tL-IYs"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="glW-lS-VvV"/>
+                    <tabBarItem key="tabBarItem" title="Flights" image="airplane" id="glW-lS-VvV"/>
                     <connections>
                         <outlet property="tableView" destination="Ydt-Bk-bpo" id="9bo-7y-OR5"/>
                     </connections>
@@ -41,7 +41,7 @@
             </objects>
             <point key="canvasLocation" x="371" y="-325"/>
         </scene>
-        <!--Item 1-->
+        <!--Map-->
         <scene sceneID="0EA-jf-eqc">
             <objects>
                 <viewController id="l69-DF-tJZ" customClass="MapViewController" customModule="FlightTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,44 +50,79 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HqN-3n-CRB">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="547"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vls-aG-WtN">
+                            <button alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vls-aG-WtN">
                                 <rect key="frame" x="325" y="40" width="30" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="ohy-vh-z8f"/>
                                     <constraint firstAttribute="height" constant="30" id="w2B-FN-jfm"/>
                                 </constraints>
-                                <state key="normal" title="Center"/>
+                                <state key="normal" image="center"/>
                                 <connections>
                                     <action selector="centerTapped:" destination="l69-DF-tJZ" eventType="touchUpInside" id="ffp-uQ-aY0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CgK-5E-zoN">
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CgK-5E-zoN">
                                 <rect key="frame" x="325" y="90" width="30" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="K2Q-nB-BKc"/>
                                     <constraint firstAttribute="width" constant="30" id="jNO-yJ-KTt"/>
                                 </constraints>
-                                <state key="normal" title="Record"/>
+                                <state key="normal" image="record"/>
+                                <connections>
+                                    <action selector="recordTapped:" destination="l69-DF-tJZ" eventType="touchUpInside" id="fdH-TN-GZJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordinate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxk-S7-Maa">
+                                <rect key="frame" x="12" y="583" width="350" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="8MA-ca-LoE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jF3-fl-BCl">
+                                <rect key="frame" x="317" y="140" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="KS7-Za-gWm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="mapTypeButtonTapped:" destination="l69-DF-tJZ" eventType="touchUpInside" id="zNX-4o-24X"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vxk-S7-Maa" firstAttribute="top" secondItem="jF3-fl-BCl" secondAttribute="bottom" constant="413" id="1Az-3y-g2C"/>
                             <constraint firstItem="lXk-sO-iHf" firstAttribute="trailing" secondItem="Vls-aG-WtN" secondAttribute="trailing" constant="20" id="Dv3-M6-agh"/>
                             <constraint firstItem="CgK-5E-zoN" firstAttribute="top" secondItem="Vls-aG-WtN" secondAttribute="bottom" constant="20" id="Lcw-DQ-m6h"/>
                             <constraint firstItem="HqN-3n-CRB" firstAttribute="top" secondItem="lXk-sO-iHf" secondAttribute="top" id="MPW-Gf-6xu"/>
-                            <constraint firstItem="lXk-sO-iHf" firstAttribute="bottom" secondItem="HqN-3n-CRB" secondAttribute="bottom" id="MfM-Cb-LnJ"/>
                             <constraint firstItem="Vls-aG-WtN" firstAttribute="top" secondItem="lXk-sO-iHf" secondAttribute="top" constant="20" id="N21-za-UmD"/>
+                            <constraint firstItem="vxk-S7-Maa" firstAttribute="top" secondItem="HqN-3n-CRB" secondAttribute="bottom" constant="16" id="PyY-Uk-gP9"/>
                             <constraint firstItem="HqN-3n-CRB" firstAttribute="leading" secondItem="lXk-sO-iHf" secondAttribute="leading" id="WCd-nU-xkG"/>
                             <constraint firstItem="lXk-sO-iHf" firstAttribute="trailing" secondItem="HqN-3n-CRB" secondAttribute="trailing" id="Wcx-B4-VA7"/>
                             <constraint firstItem="lXk-sO-iHf" firstAttribute="trailing" secondItem="CgK-5E-zoN" secondAttribute="trailing" constant="20" id="iKP-n3-LL2"/>
+                            <constraint firstAttribute="bottom" secondItem="HqN-3n-CRB" secondAttribute="bottom" constant="100" id="isT-Xi-HkQ"/>
+                            <constraint firstItem="vxk-S7-Maa" firstAttribute="centerX" secondItem="5B9-E5-qhb" secondAttribute="centerX" id="khR-gk-Njg"/>
+                            <constraint firstItem="jF3-fl-BCl" firstAttribute="leading" secondItem="lXk-sO-iHf" secondAttribute="leading" constant="317" id="koj-Xa-Atn"/>
+                            <constraint firstItem="lXk-sO-iHf" firstAttribute="trailing" secondItem="jF3-fl-BCl" secondAttribute="trailing" constant="12" id="kzx-UI-ABl"/>
+                            <constraint firstItem="jF3-fl-BCl" firstAttribute="top" secondItem="CgK-5E-zoN" secondAttribute="bottom" constant="20" id="pei-nV-RDg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lXk-sO-iHf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="6Wc-lD-1G3"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" id="6Wc-lD-1G3"/>
                     <connections>
+                        <outlet property="centerButton" destination="Vls-aG-WtN" id="G4E-La-Hny"/>
+                        <outlet property="currentLocLabel" destination="vxk-S7-Maa" id="CrB-cf-gll"/>
+                        <outlet property="mapTypeButton" destination="jF3-fl-BCl" id="1BT-1y-xj8"/>
                         <outlet property="mapView" destination="HqN-3n-CRB" id="olp-v1-Sfr"/>
+                        <outlet property="recordButton" destination="CgK-5E-zoN" id="hos-fx-cRI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ga2-pc-J1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -113,4 +148,10 @@
             <point key="canvasLocation" x="-582" y="-658"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="airplane" width="25" height="25"/>
+        <image name="center" width="25" height="25"/>
+        <image name="map" width="25" height="25"/>
+        <image name="record" width="25" height="25"/>
+    </resources>
 </document>

@@ -11,6 +11,7 @@ import UIKit
 class FlightsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    var flights : [Flight] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
