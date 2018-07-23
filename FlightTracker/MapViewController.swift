@@ -113,8 +113,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         if isRecording {
             isRecording = false
             let flight = Flight(context: context)
-            let data = NSKeyedArchiver.archivedData(withRootObject: flightPath)
-            flight.path = data
+            //let data = NSKeyedArchiver.archivedData(withRootObject: flightPath)
+            //flight.path = data
             flight.date = Date()
             flight.name = ""
             flight.from = "KSFO"

@@ -9,7 +9,9 @@
 import UIKit
 
 class FlightsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     @IBOutlet weak var tableView: UITableView!
     var flights : [Flight] = []
     
@@ -18,6 +20,11 @@ class FlightsViewController: UIViewController, UITableViewDataSource, UITableVie
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
+        do {
+            flights = try context.fetch(Flight.fetchRequest()) as! [Flight]
+        } catch {
+            print(error)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,12 +34,13 @@ class FlightsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "Tester"
+        let flight = flights[indexPath.row]
+        cell.textLabel?.text = flight.name
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return flights.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
