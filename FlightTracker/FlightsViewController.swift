@@ -25,6 +25,7 @@ class FlightsViewController: UIViewController, UITableViewDataSource, UITableVie
         } catch {
             print(error)
         }
+        print(flights)
     }
 
     override func didReceiveMemoryWarning() {

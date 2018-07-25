@@ -114,15 +114,26 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             isRecording = false
             let flight = Flight(context: context)
             //let data = NSKeyedArchiver.archivedData(withRootObject: flightPath)
-            //flight.path = data
+            
+            let alertVC = UIAlertController(title: "Save Flight", message: "Give your flight a name!", preferredStyle: .alert)
+            alertVC.addTextField { (textField) in
+                textField.text = "flightName"
+            }
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alertVC] (_) in
+                let textField = alertVC?.textFields![0]
+                print("Text field: \(textField?.text)")
+                flight.name = textField?.text
+            }))
+            present(alertVC, animated: true, completion: nil)
+            flight.path = "Location of Flight Data saved" // Get file path
             flight.date = Date()
-            flight.name = ""
-            flight.from = "KSFO"
-            flight.to = "KSJC"
+            flight.from = "KSFO" // Get from airport
+            flight.to = "KSJC"  // Get nearest airport
             appDelegate.saveContext()
             print("Recording stopped")
-            // Stop the recording and save flight
+            flightPath = []
         } else {
+            mapView.removeOverlays(mapView.overlays)
             isRecording = true
             print("Now recording")
         }
