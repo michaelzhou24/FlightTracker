@@ -10,6 +10,7 @@ import MapKit
 import UIKit
 import CoreLocation
 import CoreData
+import CoreGraphics
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -22,6 +23,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var currentLocLabel: UILabel!
     
+    var userLocAnnotation : UserLocAnnotation?
     var locMgr = CLLocationManager()
     var flightPath : [CLLocation] = []
     var isRecording = false
@@ -36,6 +38,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         checkLocationAuthorizationStatus()
         locMgr.desiredAccuracy = kCLLocationAccuracyBest
         locMgr.startUpdatingLocation()
+        locMgr.startUpdatingHeading()
         centerOnUser()
         isRecording = false
     }
@@ -85,6 +88,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 mapView.add(polyLine)
             }
         }
+        userLocAnnotation?.onUpdateHeadingRotateImg(heading: degreesToRadians(degrees: CGFloat(currentLocation.course)))
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -95,6 +99,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             return renderer
         }
         return MKOverlayRenderer()
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        userLocAnnotation = UserLocAnnotation(annotation: annotation, reuseIdentifier: nil)
+        return userLocAnnotation
     }
     
     func centerOnUser() {
@@ -121,7 +130,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             }
             alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alertVC] (_) in
                 let textField = alertVC?.textFields![0]
-                print("Text field: \(textField?.text)")
+                print("Text field: \(String(describing: textField?.text))")
                 flight.name = textField?.text
             }))
             present(alertVC, animated: true, completion: nil)

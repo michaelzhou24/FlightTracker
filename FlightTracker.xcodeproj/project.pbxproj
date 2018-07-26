@@ -16,6 +16,8 @@
 		1275318D20FEC62000A13F67 /* FlightTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275318C20FEC62000A13F67 /* FlightTrackerTests.swift */; };
 		1275319820FEC62000A13F67 /* FlightTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275319720FEC62000A13F67 /* FlightTrackerUITests.swift */; };
 		127531A620FEC6A800A13F67 /* FlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127531A520FEC6A800A13F67 /* FlightsViewController.swift */; };
+		128FED39210A750C00B37CAC /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FED38210A750C00B37CAC /* Geometry.swift */; };
+		128FED3D210A7AD000B37CAC /* UserLocAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FED3C210A7AD000B37CAC /* UserLocAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		1275319720FEC62000A13F67 /* FlightTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTrackerUITests.swift; sourceTree = "<group>"; };
 		1275319920FEC62000A13F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		127531A520FEC6A800A13F67 /* FlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewController.swift; sourceTree = "<group>"; };
+		128FED38210A750C00B37CAC /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		128FED3C210A7AD000B37CAC /* UserLocAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +105,10 @@
 		1275317320FEC61F00A13F67 /* FlightTracker */ = {
 			isa = PBXGroup;
 			children = (
+				128FED3B210A7AB400B37CAC /* ui */,
+				128FED3A210A7AAE00B37CAC /* model */,
+				128FED37210A74F300B37CAC /* util */,
 				1275317420FEC61F00A13F67 /* AppDelegate.swift */,
-				1275317620FEC61F00A13F67 /* MapViewController.swift */,
-				127531A520FEC6A800A13F67 /* FlightsViewController.swift */,
 				1275317820FEC61F00A13F67 /* Main.storyboard */,
 				1275317E20FEC62000A13F67 /* Assets.xcassets */,
 				1275318020FEC62000A13F67 /* LaunchScreen.storyboard */,
@@ -129,6 +134,31 @@
 				1275319920FEC62000A13F67 /* Info.plist */,
 			);
 			path = FlightTrackerUITests;
+			sourceTree = "<group>";
+		};
+		128FED37210A74F300B37CAC /* util */ = {
+			isa = PBXGroup;
+			children = (
+				128FED38210A750C00B37CAC /* Geometry.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		128FED3A210A7AAE00B37CAC /* model */ = {
+			isa = PBXGroup;
+			children = (
+				128FED3C210A7AD000B37CAC /* UserLocAnnotation.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		128FED3B210A7AB400B37CAC /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				1275317620FEC61F00A13F67 /* MapViewController.swift */,
+				127531A520FEC6A800A13F67 /* FlightsViewController.swift */,
+			);
+			path = ui;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,8 +294,10 @@
 			files = (
 				1275317D20FEC61F00A13F67 /* FlightTracker.xcdatamodeld in Sources */,
 				1275317720FEC61F00A13F67 /* MapViewController.swift in Sources */,
+				128FED3D210A7AD000B37CAC /* UserLocAnnotation.swift in Sources */,
 				127531A620FEC6A800A13F67 /* FlightsViewController.swift in Sources */,
 				1275317520FEC61F00A13F67 /* AppDelegate.swift in Sources */,
+				128FED39210A750C00B37CAC /* Geometry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
