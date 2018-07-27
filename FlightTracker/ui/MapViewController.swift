@@ -21,7 +21,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     @IBOutlet weak var mapTypeButton: UIButton!
     @IBOutlet weak var centerButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
-    @IBOutlet weak var currentLocLabel: UILabel!
+    @IBOutlet weak var altitudeButton: UIButton!
+    @IBOutlet weak var speedButton: UIButton!
+    @IBOutlet weak var timeElapsedButton: UIButton!
     
     var userLocAnnotation : UserLocAnnotation?
     var locMgr = CLLocationManager()
@@ -33,7 +35,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         // Do any additional setup after loading the view, typically from a nib.
         initializeButtons()
         mapView.delegate = self
-        mapView.mapType = MKMapType.satellite
+        mapView.mapType = MKMapType.standard
         locMgr.delegate = self
         checkLocationAuthorizationStatus()
         locMgr.desiredAccuracy = kCLLocationAccuracyBest
@@ -44,16 +46,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     func initializeButtons() {
-        mapTypeButton.layer.cornerRadius = 5
-        mapTypeButton.layer.borderWidth = 1
-        mapTypeButton.layer.borderColor = UIColor.black.cgColor
-        centerButton.layer.cornerRadius = 5
-        centerButton.layer.borderWidth = 1
-        centerButton.layer.borderColor = UIColor.black.cgColor
-        recordButton.layer.cornerRadius = 5
-        recordButton.layer.borderWidth = 1
-        recordButton.layer.borderColor = UIColor.black.cgColor
-        mapTypeButton.setTitle("Street", for: .normal)
+        mapTypeButton.setTitle("Satellite", for: .normal)
+        altitudeButton.setTitle("\((locMgr.location?.course)!)", for: .normal)
+        speedButton.setTitle("\((locMgr.location?.speed)!) mph", for: .normal)
+        timeElapsedButton.setTitle("00:00", for: .normal)
+        
     }
     
     @IBAction func mapTypeButtonTapped(_ sender: Any) {
@@ -77,7 +74,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let currentLocation = locations[0]
-        currentLocLabel.text = String(currentLocation.coordinate.latitude.rounded()) + ", " + String(currentLocation.coordinate.longitude.rounded()) + " Heading: \(currentLocation.course)"
+        
         if isRecording {
             flightPath.append(currentLocation)
             if flightPath.count > 1 {
@@ -89,6 +86,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             }
         }
         userLocAnnotation?.onUpdateHeadingRotateImg(heading: degreesToRadians(degrees: CGFloat(currentLocation.course)))
+        UIView.performWithoutAnimation {
+            self.altitudeButton.setTitle("\((locMgr.location?.course)!)", for: .normal)
+            self.speedButton.setTitle("\((locMgr.location?.speed)!) mph", for: .normal)
+            self.altitudeButton.layoutIfNeeded()
+            self.speedButton.layoutIfNeeded()
+        }
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {

@@ -13,8 +13,8 @@ class UserLocAnnotation : MKAnnotationView {
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         image = UIImage(named: "plane")
-        frame.size.height = 30
-        frame.size.width = 30
+        frame.size.height = 50
+        frame.size.width = 50
     }
     
     required init?(coder aDecoder: NSCoder) {
