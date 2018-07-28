@@ -33,22 +33,21 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        initializeButtons()
         mapView.delegate = self
         mapView.mapType = MKMapType.standard
         locMgr.delegate = self
         checkLocationAuthorizationStatus()
         locMgr.desiredAccuracy = kCLLocationAccuracyBest
         locMgr.startUpdatingLocation()
-        locMgr.startUpdatingHeading()
         centerOnUser()
         isRecording = false
+        initializeButtons()
     }
     
     func initializeButtons() {
         mapTypeButton.setTitle("Satellite", for: .normal)
-        altitudeButton.setTitle("\((locMgr.location?.course)!)", for: .normal)
-        speedButton.setTitle("\((locMgr.location?.speed)!) mph", for: .normal)
+        altitudeButton.setTitle("\(Int((locMgr.location?.course)!))", for: .normal)
+        speedButton.setTitle("\(mphToKnots(speed: (locMgr.location?.speed)!)) kts", for: .normal)
         timeElapsedButton.setTitle("00:00", for: .normal)
         
     }
@@ -87,8 +86,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
         userLocAnnotation?.onUpdateHeadingRotateImg(heading: degreesToRadians(degrees: CGFloat(currentLocation.course)))
         UIView.performWithoutAnimation {
-            self.altitudeButton.setTitle("\((locMgr.location?.course)!)", for: .normal)
-            self.speedButton.setTitle("\((locMgr.location?.speed)!) mph", for: .normal)
+            self.altitudeButton.setTitle("\(Int((locMgr.location?.course)!))", for: .normal)
+            self.speedButton.setTitle("\(mphToKnots(speed: (locMgr.location?.speed)!)) kts", for: .normal)
             self.altitudeButton.layoutIfNeeded()
             self.speedButton.layoutIfNeeded()
         }

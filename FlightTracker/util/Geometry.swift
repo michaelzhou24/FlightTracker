@@ -13,6 +13,10 @@ func degreesToRadians(degrees: CGFloat) -> CGFloat {
     return degrees * CGFloat(Double.pi) / 180
 }
 
-func radiansToDegress(radians: CGFloat) -> CGFloat {
+func radiansToDegrees(radians: CGFloat) -> CGFloat {
     return radians * 180 / CGFloat(Double.pi)
+}
+
+func mphToKnots(speed: Double) -> Int {
+    return Int(speed * (5280 / 6075))
 }
