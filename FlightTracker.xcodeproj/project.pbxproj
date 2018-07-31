@@ -16,7 +16,7 @@
 		1275318D20FEC62000A13F67 /* FlightTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275318C20FEC62000A13F67 /* FlightTrackerTests.swift */; };
 		1275319820FEC62000A13F67 /* FlightTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275319720FEC62000A13F67 /* FlightTrackerUITests.swift */; };
 		127531A620FEC6A800A13F67 /* FlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127531A520FEC6A800A13F67 /* FlightsViewController.swift */; };
-		128FED39210A750C00B37CAC /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FED38210A750C00B37CAC /* Geometry.swift */; };
+		128FED39210A750C00B37CAC /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FED38210A750C00B37CAC /* Conversions.swift */; };
 		128FED3D210A7AD000B37CAC /* UserLocAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FED3C210A7AD000B37CAC /* UserLocAnnotation.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,7 @@
 		1275319720FEC62000A13F67 /* FlightTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTrackerUITests.swift; sourceTree = "<group>"; };
 		1275319920FEC62000A13F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		127531A520FEC6A800A13F67 /* FlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewController.swift; sourceTree = "<group>"; };
-		128FED38210A750C00B37CAC /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		128FED38210A750C00B37CAC /* Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversions.swift; sourceTree = "<group>"; };
 		128FED3C210A7AD000B37CAC /* UserLocAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,7 +139,7 @@
 		128FED37210A74F300B37CAC /* util */ = {
 			isa = PBXGroup;
 			children = (
-				128FED38210A750C00B37CAC /* Geometry.swift */,
+				128FED38210A750C00B37CAC /* Conversions.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 				128FED3D210A7AD000B37CAC /* UserLocAnnotation.swift in Sources */,
 				127531A620FEC6A800A13F67 /* FlightsViewController.swift in Sources */,
 				1275317520FEC61F00A13F67 /* AppDelegate.swift in Sources */,
-				128FED39210A750C00B37CAC /* Geometry.swift in Sources */,
+				128FED39210A750C00B37CAC /* Conversions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

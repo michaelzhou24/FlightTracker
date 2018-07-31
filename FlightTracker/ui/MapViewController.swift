@@ -29,6 +29,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var locMgr = CLLocationManager()
     var flightPath : [CLLocation] = []
     var isRecording = false
+    var timer = Timer()
+    var timeCounter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +38,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapView.delegate = self
         mapView.mapType = MKMapType.standard
         locMgr.delegate = self
-        checkLocationAuthorizationStatus()
+        if CLLocationManager.authorizationStatus() == .authorizedAlways {
+            mapView.showsUserLocation = true
+        } else {
+            locMgr.requestAlwaysAuthorization()
+            self.viewDidLoad()
+        }
         locMgr.desiredAccuracy = kCLLocationAccuracyBest
         locMgr.startUpdatingLocation()
         centerOnUser()
@@ -59,15 +66,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         } else {
             mapView.mapType = MKMapType.satellite
             mapTypeButton.setTitle("Street", for: .normal)
-        }
-    }
-    
-    func checkLocationAuthorizationStatus() {
-        if CLLocationManager.authorizationStatus() == .authorizedAlways {
-            mapView.showsUserLocation = true
-        } else {
-            locMgr.requestAlwaysAuthorization()
-            checkLocationAuthorizationStatus()
         }
     }
 
@@ -140,6 +138,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             flight.date = Date()
             flight.from = "KSFO" // Get from airport
             flight.to = "KSJC"  // Get nearest airport
+            flight.duration = Int16(timeCounter)
+            timer.invalidate()
             appDelegate.saveContext()
             print("Recording stopped")
             flightPath = []
@@ -147,6 +147,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             mapView.removeOverlays(mapView.overlays)
             isRecording = true
             print("Now recording")
+            timeCounter = 0
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        }
+    }
+    
+    @objc func updateTime() {
+        timeCounter += 1
+        UIView.performWithoutAnimation {
+            self.timeElapsedButton.setTitle(formatTime(seconds: timeCounter), for: .normal)
+            self.timeElapsedButton.layoutIfNeeded()
         }
     }
     
