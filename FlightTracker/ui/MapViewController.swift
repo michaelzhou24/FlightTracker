@@ -134,7 +134,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 flight.name = textField?.text
             }))
             present(alertVC, animated: true, completion: nil)
-            flight.path = "Location of Flight Data saved" // Get file path
+            flight.path = storeFlightData()
+            print(flight.path!)
             flight.date = Date()
             flight.from = "KSFO" // Get from airport
             flight.to = "KSJC"  // Get nearest airport
@@ -152,6 +153,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
     }
     
+    func storeFlightData() -> String {
+        var data = ""
+        for dataPoint in flightPath {
+            data += "+\(dataPoint.coordinate.latitude):\(dataPoint.coordinate.longitude)"
+        }
+        return data
+    }
+    
     @objc func updateTime() {
         timeCounter += 1
         UIView.performWithoutAnimation {
@@ -164,7 +173,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
 

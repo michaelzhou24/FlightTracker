@@ -115,6 +115,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="360.00"/>
+                                        <connections>
+                                            <action selector="changeTracktoAlt:" destination="l69-DF-tJZ" eventType="touchUpInside" id="ICe-A0-SUE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4k0-Ta-Aa5">
                                         <rect key="frame" x="274" y="3" width="57" height="33"/>
