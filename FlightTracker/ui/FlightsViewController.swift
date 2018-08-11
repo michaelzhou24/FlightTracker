@@ -45,16 +45,14 @@ class FlightsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Do something when clicked
+        performSegue(withIdentifier: "flightInfoSegue", sender: flights[indexPath.row])
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let nextVC = segue.destination as? FlightViewController {
+            nextVC.flight = sender as? Flight
+        }
+        
     }
-    */
 
 }

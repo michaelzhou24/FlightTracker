@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120B3F05211540D900587779 /* FlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B3F04211540D900587779 /* FlightViewController.swift */; };
 		1275317520FEC61F00A13F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275317420FEC61F00A13F67 /* AppDelegate.swift */; };
 		1275317720FEC61F00A13F67 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275317620FEC61F00A13F67 /* MapViewController.swift */; };
 		1275317A20FEC61F00A13F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1275317820FEC61F00A13F67 /* Main.storyboard */; };
@@ -18,6 +19,8 @@
 		127531A620FEC6A800A13F67 /* FlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127531A520FEC6A800A13F67 /* FlightsViewController.swift */; };
 		128FED39210A750C00B37CAC /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FED38210A750C00B37CAC /* Conversions.swift */; };
 		128FED3D210A7AD000B37CAC /* UserLocAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FED3C210A7AD000B37CAC /* UserLocAnnotation.swift */; };
+		12949F04211BB1A6001ED91A /* RouteParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12949F03211BB1A6001ED91A /* RouteParser.swift */; };
+		12949F06211E66E0001ED91A /* String+indexOf&SubString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12949F05211E66E0001ED91A /* String+indexOf&SubString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		120B3F04211540D900587779 /* FlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewController.swift; sourceTree = "<group>"; };
 		1275317120FEC61F00A13F67 /* FlightTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1275317420FEC61F00A13F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1275317620FEC61F00A13F67 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +59,8 @@
 		127531A520FEC6A800A13F67 /* FlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewController.swift; sourceTree = "<group>"; };
 		128FED38210A750C00B37CAC /* Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversions.swift; sourceTree = "<group>"; };
 		128FED3C210A7AD000B37CAC /* UserLocAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocAnnotation.swift; sourceTree = "<group>"; };
+		12949F03211BB1A6001ED91A /* RouteParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RouteParser.swift; path = FlightTracker/RouteParser.swift; sourceTree = SOURCE_ROOT; };
+		12949F05211E66E0001ED91A /* String+indexOf&SubString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+indexOf&SubString.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				128FED38210A750C00B37CAC /* Conversions.swift */,
+				12949F03211BB1A6001ED91A /* RouteParser.swift */,
+				12949F05211E66E0001ED91A /* String+indexOf&SubString.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -157,6 +165,7 @@
 			children = (
 				1275317620FEC61F00A13F67 /* MapViewController.swift */,
 				127531A520FEC6A800A13F67 /* FlightsViewController.swift */,
+				120B3F04211540D900587779 /* FlightViewController.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -292,9 +301,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12949F04211BB1A6001ED91A /* RouteParser.swift in Sources */,
 				1275317D20FEC61F00A13F67 /* FlightTracker.xcdatamodeld in Sources */,
+				120B3F05211540D900587779 /* FlightViewController.swift in Sources */,
 				1275317720FEC61F00A13F67 /* MapViewController.swift in Sources */,
 				128FED3D210A7AD000B37CAC /* UserLocAnnotation.swift in Sources */,
+				12949F06211E66E0001ED91A /* String+indexOf&SubString.swift in Sources */,
 				127531A620FEC6A800A13F67 /* FlightsViewController.swift in Sources */,
 				1275317520FEC61F00A13F67 /* AppDelegate.swift in Sources */,
 				128FED39210A750C00B37CAC /* Conversions.swift in Sources */,

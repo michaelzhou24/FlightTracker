@@ -137,8 +137,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             flight.path = storeFlightData()
             print(flight.path!)
             flight.date = Date()
-            flight.from = "KSFO" // Get from airport
-            flight.to = "KSJC"  // Get nearest airport
             flight.duration = Int16(timeCounter)
             timer.invalidate()
             appDelegate.saveContext()
