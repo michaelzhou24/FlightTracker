@@ -18,22 +18,18 @@ class FlightViewController: UIViewController {
         flightNameLabel.text = flight?.name
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func viewFlightTapped(_ sender: Any) {
-        performSegue(withIdentifier: "plotPathSegue", sender: nil)
+        performSegue(withIdentifier: "showPathSegue", sender: flight)
     }
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     
+        if segue.identifier == "showPathSegue" {
+            let nextVC = segue.destination as! PathViewController
+            nextVC.flight = sender as! Flight
+        }
     }
-    
-
 }

@@ -27,10 +27,23 @@ class FlightsViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         print(flights)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func deleteAllFlights(_ sender: Any) {
+        for flight in flights {
+            context.delete(flight)
+        }
+        flights = []
+        appDelegate.saveContext()
+        tableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        do {
+            flights = try context.fetch(Flight.fetchRequest()) as! [Flight]
+        } catch {
+            print(error)
+        }
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

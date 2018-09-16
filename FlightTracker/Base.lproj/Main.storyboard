@@ -32,7 +32,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="38F-tL-IYs"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4SR-gJ-Nyp"/>
+                    <navigationItem key="navigationItem" id="4SR-gJ-Nyp">
+                        <barButtonItem key="rightBarButtonItem" title="Delete All" id="v7O-HU-2MK">
+                            <connections>
+                                <action selector="deleteAllFlights:" destination="lxQ-Ya-6eY" id="GWF-57-D7c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Ydt-Bk-bpo" id="9bo-7y-OR5"/>
                         <segue destination="bzW-CF-pBT" kind="show" identifier="flightInfoSegue" id="Q0K-3u-4Ia"/>
@@ -75,12 +81,78 @@
                     </view>
                     <connections>
                         <outlet property="flightNameLabel" destination="ezc-8j-L6K" id="G0g-Gx-aDj"/>
-                        <segue destination="l69-DF-tJZ" kind="show" identifier="plotPathSegue" id="RN7-v1-hbB"/>
+                        <segue destination="pDH-ai-mmO" kind="show" identifier="showPathSegue" id="dgK-2C-Dni"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GvF-p0-Nn5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2214" y="-744"/>
+            <point key="canvasLocation" x="2231" y="-325"/>
+        </scene>
+        <!--Path View Controller-->
+        <scene sceneID="Ig7-9B-Yyz">
+            <objects>
+                <viewController id="pDH-ai-mmO" customClass="PathViewController" customModule="FlightTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s7e-WT-WBL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hn2-ZO-iDe">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </mapView>
+                            <button alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipZ-0Q-y9t">
+                                <rect key="frame" x="329" y="80" width="30" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="4NT-5y-f36"/>
+                                    <constraint firstAttribute="height" constant="30" id="OZ2-Q4-VPO"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="lff-41-mi7"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="zOH-0u-Bbv"/>
+                                </constraints>
+                                <state key="normal" image="center"/>
+                                <connections>
+                                    <action selector="centerTapped:" destination="l69-DF-tJZ" eventType="touchUpInside" id="xi1-Ie-DrD"/>
+                                    <action selector="centreButton:" destination="pDH-ai-mmO" eventType="touchUpInside" id="6Cw-tM-e5S"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYD-Wl-saO">
+                                <rect key="frame" x="321" y="132" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="H8r-6h-Ocv"/>
+                                    <constraint firstAttribute="width" constant="45" id="Ytc-aQ-Kun"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="cWz-4f-d4I"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="changeMapViewButton:" destination="pDH-ai-mmO" eventType="touchUpInside" id="dGt-AB-YlB"/>
+                                    <action selector="mapTypeButtonTapped:" destination="l69-DF-tJZ" eventType="touchUpInside" id="Y78-LR-SfQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hn2-ZO-iDe" firstAttribute="top" secondItem="ud4-YA-CbE" secondAttribute="top" id="3bw-sh-ysx"/>
+                            <constraint firstItem="ipZ-0Q-y9t" firstAttribute="leading" secondItem="ud4-YA-CbE" secondAttribute="leading" constant="329" id="4Dc-HH-lOv"/>
+                            <constraint firstItem="ud4-YA-CbE" firstAttribute="bottom" secondItem="hn2-ZO-iDe" secondAttribute="bottom" id="AQE-wY-PFV"/>
+                            <constraint firstItem="LYD-Wl-saO" firstAttribute="leading" secondItem="ud4-YA-CbE" secondAttribute="leading" constant="321" id="Atm-wp-3PL"/>
+                            <constraint firstItem="ud4-YA-CbE" firstAttribute="trailing" secondItem="LYD-Wl-saO" secondAttribute="trailing" constant="8" id="VXR-7W-JP7"/>
+                            <constraint firstItem="hn2-ZO-iDe" firstAttribute="leading" secondItem="ud4-YA-CbE" secondAttribute="leading" id="ajX-Q0-RpE"/>
+                            <constraint firstItem="ud4-YA-CbE" firstAttribute="trailing" secondItem="ipZ-0Q-y9t" secondAttribute="trailing" constant="16" id="asi-vw-7hJ"/>
+                            <constraint firstItem="LYD-Wl-saO" firstAttribute="top" secondItem="ipZ-0Q-y9t" secondAttribute="bottom" constant="20" id="d9K-Bp-QAd"/>
+                            <constraint firstItem="ud4-YA-CbE" firstAttribute="bottom" secondItem="LYD-Wl-saO" secondAttribute="bottom" constant="462" id="nv6-M6-zVJ"/>
+                            <constraint firstItem="ipZ-0Q-y9t" firstAttribute="top" secondItem="ud4-YA-CbE" secondAttribute="top" constant="16" id="pxn-ZK-pEm"/>
+                            <constraint firstItem="ud4-YA-CbE" firstAttribute="trailing" secondItem="hn2-ZO-iDe" secondAttribute="trailing" id="xXv-55-h8K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ud4-YA-CbE"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapTypeButton" destination="LYD-Wl-saO" id="Viw-0h-ivh"/>
+                        <outlet property="mapView" destination="hn2-ZO-iDe" id="inN-Bi-3Cg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EfA-6m-iYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3007" y="-325"/>
         </scene>
         <!--Map-->
         <scene sceneID="0EA-jf-eqc">
@@ -91,10 +163,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HqN-3n-CRB">
-                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
                             </mapView>
                             <button alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vls-aG-WtN">
-                                <rect key="frame" x="325" y="84" width="30" height="30"/>
+                                <rect key="frame" x="325" y="40" width="30" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="ohy-vh-z8f"/>
@@ -106,7 +178,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CgK-5E-zoN">
-                                <rect key="frame" x="325" y="134" width="30" height="30"/>
+                                <rect key="frame" x="325" y="90" width="30" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="K2Q-nB-BKc"/>
@@ -118,7 +190,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jF3-fl-BCl">
-                                <rect key="frame" x="317" y="184" width="46" height="30"/>
+                                <rect key="frame" x="317" y="140" width="46" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="KS7-Za-gWm"/>
@@ -277,7 +349,4 @@
         <image name="map" width="25" height="25"/>
         <image name="record" width="25" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="RN7-v1-hbB"/>
-    </inferredMetricsTieBreakers>
 </document>

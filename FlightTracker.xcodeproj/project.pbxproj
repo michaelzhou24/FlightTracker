@@ -21,6 +21,7 @@
 		128FED3D210A7AD000B37CAC /* UserLocAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FED3C210A7AD000B37CAC /* UserLocAnnotation.swift */; };
 		12949F04211BB1A6001ED91A /* RouteParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12949F03211BB1A6001ED91A /* RouteParser.swift */; };
 		12949F06211E66E0001ED91A /* String+indexOf&SubString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12949F05211E66E0001ED91A /* String+indexOf&SubString.swift */; };
+		12A851D9212BA13300CA0F58 /* PathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A851D8212BA13300CA0F58 /* PathViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		128FED3C210A7AD000B37CAC /* UserLocAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocAnnotation.swift; sourceTree = "<group>"; };
 		12949F03211BB1A6001ED91A /* RouteParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RouteParser.swift; path = FlightTracker/RouteParser.swift; sourceTree = SOURCE_ROOT; };
 		12949F05211E66E0001ED91A /* String+indexOf&SubString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+indexOf&SubString.swift"; sourceTree = "<group>"; };
+		12A851D8212BA13300CA0F58 /* PathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				1275317620FEC61F00A13F67 /* MapViewController.swift */,
 				127531A520FEC6A800A13F67 /* FlightsViewController.swift */,
 				120B3F04211540D900587779 /* FlightViewController.swift */,
+				12A851D8212BA13300CA0F58 /* PathViewController.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				127531A620FEC6A800A13F67 /* FlightsViewController.swift in Sources */,
 				1275317520FEC61F00A13F67 /* AppDelegate.swift in Sources */,
 				128FED39210A750C00B37CAC /* Conversions.swift in Sources */,
+				12A851D9212BA13300CA0F58 /* PathViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

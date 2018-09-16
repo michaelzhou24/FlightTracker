@@ -7,23 +7,14 @@
 //
 
 import MapKit
-import UIKit
 
 func parseDataPoints(str: String) -> [CLLocation] {
-    var end = 0
-    var posn = 0
     var path : [CLLocation] = []
+    let latLons = str.split(separator: "+")
     
-    while posn < str.count {
-        end = str.substring(from: posn).indexOf(";")!
-        var lat = Double(str.substring(with: posn..<end))
-        posn = end + 1
-        
-        end = str.substring(from: posn).indexOf(";")!
-        var lon = Double(str.substring(with: posn..<end))
-        posn = end + 1
-        
-        path.append(CLLocation(latitude: lat!, longitude: lon!))
+    for latLon in latLons {
+        let coordinateArr = latLon.split(separator: ";")
+        path.append(CLLocation(latitude: Double(coordinateArr[0])!, longitude: Double(coordinateArr[1])!))
     }
     
     return path

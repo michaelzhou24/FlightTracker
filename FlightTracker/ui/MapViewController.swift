@@ -154,7 +154,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func storeFlightData() -> String {
         var data = ""
         for dataPoint in flightPath {
-            data += "+\(dataPoint.coordinate.latitude):\(dataPoint.coordinate.longitude)"
+            data += "+\(dataPoint.coordinate.latitude);\(dataPoint.coordinate.longitude)"
         }
         return data
     }
@@ -166,11 +166,5 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             self.timeElapsedButton.layoutIfNeeded()
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }
 
