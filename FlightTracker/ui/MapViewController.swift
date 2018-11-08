@@ -37,26 +37,38 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         // Do any additional setup after loading the view, typically from a nib.
         mapView.delegate = self
         mapView.mapType = MKMapType.standard
-        locMgr.delegate = self
-        if CLLocationManager.authorizationStatus() == .authorizedAlways {
-            mapView.showsUserLocation = true
-        } else {
-            locMgr.requestAlwaysAuthorization()
-            self.viewDidLoad()
-        }
-        locMgr.desiredAccuracy = kCLLocationAccuracyBest
-        locMgr.startUpdatingLocation()
+        getLocation()
         centerOnUser()
-        isRecording = false
         initializeButtons()
     }
     
     func initializeButtons() {
         mapTypeButton.setTitle("Satellite", for: .normal)
-        altitudeButton.setTitle("\(Int((locMgr.location?.course)!))", for: .normal)
-        speedButton.setTitle("\(mphToKnots(speed: (locMgr.location?.speed)!)) kts", for: .normal)
+        //altitudeButton.setTitle("\(Int((locMgr.location?.course)!))", for: .normal)
+        //speedButton.setTitle("\(mphToKnots(speed: (locMgr.location?.speed)!)) kts", for: .normal)
         timeElapsedButton.setTitle("00:00", for: .normal)
         
+    }
+    
+    func getLocation() {
+        let status  = CLLocationManager.authorizationStatus()
+        if status == .notDetermined {
+            locMgr.requestAlwaysAuthorization()
+            return
+        }
+        if status == .denied || status == .restricted {
+            let alert = UIAlertController(title: "Location Services Disabled", message: "Please enable Location Services in Settings", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        locMgr.delegate = self
+        locMgr.startUpdatingLocation()
+        locMgr.desiredAccuracy = kCLLocationAccuracyBest
+        mapView.showsUserLocation = true
     }
     
     @IBAction func mapTypeButtonTapped(_ sender: Any) {
@@ -79,7 +91,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 let nextIndex = flightPath.count - 2
                 let lineSegment = [flightPath[firstIndex].coordinate, flightPath[nextIndex].coordinate]
                 let polyLine = MKPolyline(coordinates: lineSegment, count: lineSegment.count)
-                mapView.add(polyLine)
+                mapView.addOverlay(polyLine)
             }
         }
         userLocAnnotation?.onUpdateHeadingRotateImg(heading: degreesToRadians(degrees: CGFloat(currentLocation.course)))
@@ -108,7 +120,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func centerOnUser() {
         if let coordinate = locMgr.location?.coordinate {
-            let region = MKCoordinateRegionMakeWithDistance(coordinate, 3000, 3000)
+            let region = MKCoordinateRegion.init(center: coordinate, latitudinalMeters: 3000, longitudinalMeters: 3000)
             mapView.setRegion(region, animated: true)
         }
     }

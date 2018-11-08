@@ -21,12 +21,12 @@ class PathViewController: UIViewController, MKMapViewDelegate {
         mapView.delegate = self
         pathInCoordinates = parseDataPoints(str: flight.path!)
         plotCoordinates()
-        let region = MKCoordinateRegionMakeWithDistance(pathInCoordinates[0].coordinate, 3000, 3000)
+        let region = MKCoordinateRegion.init(center: pathInCoordinates[0].coordinate, latitudinalMeters: 3000, longitudinalMeters: 3000)
         mapView.setRegion(region, animated: true)
     }
     
     @IBAction func centreButton(_ sender: Any) {
-        let region = MKCoordinateRegionMakeWithDistance(pathInCoordinates[0].coordinate, 3000, 3000)
+        let region = MKCoordinateRegion.init(center: pathInCoordinates[0].coordinate, latitudinalMeters: 3000, longitudinalMeters: 3000)
         mapView.setRegion(region, animated: true)
     }
     
@@ -44,7 +44,7 @@ class PathViewController: UIViewController, MKMapViewDelegate {
         for index in 1...pathInCoordinates.count-1 {
             let lineSegment = [pathInCoordinates[index-1].coordinate, pathInCoordinates[index].coordinate]
             let polyLine = MKPolyline(coordinates: lineSegment, count: lineSegment.count)
-            mapView.add(polyLine)
+            mapView.addOverlay(polyLine)
         }
     }
 
